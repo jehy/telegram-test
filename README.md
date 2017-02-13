@@ -11,7 +11,7 @@ npm install telegram-test
 
 ##Usage
 
-1. Include all necessary modules:
+###Include all necessary modules
 ```js
 var
   TelegramTester = require('telegram-test'),
@@ -20,7 +20,7 @@ var
   telegramBot      = new TelegramBot("sample token", {});
 ```
 
-2. Create a bot with any kind of logic:
+###Create a bot with any kind of logic
 ```js
 let TestBot = function (bot) {
 
@@ -47,7 +47,8 @@ let TestBot = function (bot) {
   });
 };
 ```
-3. Write tests (note that telegramBot is an instance of node-telegram-bot-api):
+###Write tests
+(note that telegramBot is an instance of node-telegram-bot-api):
 ```js
 describe('Telegram Update Generator', function () {
   it('should be able to talk with sample bot', function () {
