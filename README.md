@@ -14,7 +14,7 @@ npm install telegram-test
 1. Include all necessary modules:
 ```js
 var
-  MessageGenerator = require('../script'),
+  TelegramTester = require('telegram-test'),
   Promise          = require('bluebird'),
   TelegramBot      = require('node-telegram-bot-api'),
   telegramBot      = new TelegramBot("sample token", {});
@@ -51,12 +51,12 @@ let TestBot = function (bot) {
 ```js
 describe('Telegram Update Generator', function () {
   it('should be able to talk with sample bot', function () {
-    let messageGenerator = new MessageGenerator(telegramBot);
+    let telegramTester = new TelegramTester(telegramBot);
     let testChat=1;
-    return messageGenerator.sendUpdate(testChat, "/ping")
+    return telegramTester.sendUpdate(testChat, "/ping")
       .then(data=> {
         if (data.keyboard[0][0].text === 'ok 1')
-          return messageGenerator.sendUpdate(testChat, "whoami");
+          return telegramTester.sendUpdate(testChat, "whoami");
         else throw new Error('Wrong keyboard key for ping! (was ' + data.keyboard[0][0].text + ')')
       })
       .then(data=> {
@@ -67,3 +67,5 @@ describe('Telegram Update Generator', function () {
   });
 });
 ```
+
+You can also emulate selecting different actions, using data.keyboard.
