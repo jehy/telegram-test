@@ -1,0 +1,27 @@
+{
+  "name": "telegram-test",
+  "version": "0.0.1",
+  "description": "Lets you debug telegram bots offline",
+  "keywords": [
+    "telegram",
+    "bot",
+    "test"
+  ],
+  "main": "script.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jehy/telegram-test"
+  },
+  "author": "Jehy",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "bluebird": "^3.4.7",
+    "node-telegram-bot-api": "^0.27.0"
+  }
+}
