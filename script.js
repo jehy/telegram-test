@@ -66,7 +66,7 @@ MessageGenerator.prototype.sendUpdate = function (chatId, action) {
         if (form.reply_markup) {
           resolve({text: text, keyboard: JSON.parse(form.reply_markup).keyboard});
         }
-        else resolve(this.sendUpdate(chatId));//wait until some available actions appear
+        else resolve(self.sendUpdate(chatId));//wait until some available actions appear
       }
     });
     if (action != undefined) {
