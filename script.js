@@ -1,4 +1,5 @@
 "use strict";
+const Promise = require('bluebird');
 /**
  *
  * @param {object}[bot]

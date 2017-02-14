@@ -1,6 +1,6 @@
 'use strict';
 var
-  TelegramTest = require('../script'),
+  TelegramTest = require('../script.es2015.js'),
   Promise      = require('bluebird'),
   TelegramBot  = require('node-telegram-bot-api'),
   telegramBot  = new TelegramBot("sample token", {});
