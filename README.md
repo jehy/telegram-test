@@ -1,8 +1,9 @@
-#Telegram update generator
+#Telegram test
 
 [![Build Status](https://travis-ci.org/jehy/telegram-test.svg?branch=master)](https://travis-ci.org/jehy/telegram-test)
 
 Simple module for testing telegram bots, created with `node-telegram-bot-api`
+which lets you test bot's logic without using telegram API.
 
 ##Installation
 ```bash
@@ -51,13 +52,15 @@ let TestBot = function (bot) {
 (note that telegramBot is an instance of node-telegram-bot-api):
 ```js
 describe('Telegram Update Generator', function () {
+  let myBot = new TestBot(telegramBot);
+  let testChat = 0;
   it('should be able to talk with sample bot', function () {
-    let telegramTester = new TelegramTester(telegramBot);
-    let testChat=1;
-    return telegramTester.sendUpdate(testChat, "/ping")
+    let telegramTest = new TelegramTest(telegramBot);
+    testChat++;
+    return telegramTest.sendUpdate(testChat, "/ping")
       .then(data=> {
         if (data.keyboard[0][0].text === 'ok 1')
-          return telegramTester.sendUpdate(testChat, "whoami");
+          return telegramTest.sendUpdate(testChat, "whoami");
         else throw new Error('Wrong keyboard key for ping! (was ' + data.keyboard[0][0].text + ')')
       })
       .then(data=> {
