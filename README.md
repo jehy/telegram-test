@@ -72,4 +72,53 @@ describe('Telegram Update Generator', function () {
 });
 ```
 
-You can also emulate selecting different actions, using data.keyboard.
+You can also emulate selecting different actions, using data.keyboard like this:
+
+```js
+describe('Telegram Bot tests', function () {
+  let testChat=1;
+  let myBot = new TestBot(telegramBot);
+  let telegramTest = new TelegramTest(telegramBot);
+  it('should complete a complex choise', function () {
+    var myChat = testChat;
+    testChat++;
+    return telegramTest.sendUpdate(myChat, "/start")
+      .then(data=> {
+        return telegramTest.sendUpdate(myChat, data.keyboard[0][0].text);
+      })
+      .then(data=> {
+        return telegramTest.sendUpdate(myChat, data.keyboard[0][0].text);
+      })
+      .then(data=> {
+        return telegramTest.sendUpdate(myChat, data.keyboard[0][0].text);
+      })
+      .then(data=> {
+        return telegramTest.sendUpdate(myChat, data.keyboard[0][0].text);
+      })
+      .then(data=> {
+        return telegramTest.sendUpdate(myChat, data.keyboard[0][0].text);
+      })
+      .then(data=> {
+        return telegramTest.sendUpdate(myChat, data.keyboard[0][0].text);
+      })
+      .then(data=> {
+        return telegramTest.sendUpdate(myChat, data.keyboard[0][0].text);
+      })
+      .then(data=> {
+        return telegramTest.sendUpdate(myChat, data.keyboard[0][1].text);
+      })
+      .then(data=> {
+         if(data.text==='Final' && data.keyboard[0][0].text==='Finish')
+         {
+          return;
+         }
+         else
+         {
+           throw new Error('we went some other way!')
+         }
+      });
+  });
+});
+```
+
+Of cause you can also make a simple array of choices and iterate through it.

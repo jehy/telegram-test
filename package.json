@@ -1,6 +1,6 @@
 {
   "name": "telegram-test",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Lets you debug telegram bots offline",
   "keywords": [
     "telegram",
