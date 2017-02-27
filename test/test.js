@@ -1,5 +1,5 @@
 const
-  TelegramTest = require('../script.es2015.js'),
+  TelegramTest = require('../index.js'),
   Promise      = require('bluebird'),
   TelegramBot  = require('node-telegram-bot-api'),
   telegramBot  = new TelegramBot('sample token', {});
