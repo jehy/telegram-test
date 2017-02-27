@@ -9,7 +9,7 @@
   ],
   "main": "script.es2015.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha",
+    "test": "./node_modules/mocha/bin/mocha --use_strict",
     "compile": "./node_modules/babel-cli/bin/babel.js --presets es2015 script.js --out-file script.es2015.js",
     "prepublish": "npm run compile",
     "lint": "./node_modules/eslint/bin/eslint.js script.js test"
