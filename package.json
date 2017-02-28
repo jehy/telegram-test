@@ -1,6 +1,6 @@
 {
   "name": "telegram-test",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lets you debug telegram bots offline",
   "keywords": [
     "telegram",
@@ -22,7 +22,6 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.4.7",
-    "eslint-plugin-react": "^6.10.0",
     "object-assign": "^4.1.1"
   },
   "devDependencies": {
@@ -31,6 +30,7 @@
     "eslint": "^3.16.1",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-react": "^6.10.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-promise": "^3.4.2",
     "eslint-plugin-standard": "^2.0.1",
