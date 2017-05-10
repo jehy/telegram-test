@@ -1,4 +1,4 @@
-#Telegram test
+# Telegram test
 
 [![Build Status](https://travis-ci.org/jehy/telegram-test.svg?branch=master)](https://travis-ci.org/jehy/telegram-test)
 [![Coverage Status](https://coveralls.io/repos/github/jehy/telegram-test/badge.svg?branch=master)](https://coveralls.io/github/jehy/telegram-test?branch=master)
@@ -8,14 +8,14 @@
 Simple module for testing telegram bots, created with `node-telegram-bot-api`
 which lets you test bot's logic without using telegram API.
 
-##Installation
+## Installation
 ```bash
 npm install telegram-test
 ```
 
-##Usage
+## Usage
 
-###Include all necessary modules
+### Include all necessary modules
 ```js
 var
   TelegramTester = require('telegram-test'),
@@ -23,7 +23,7 @@ var
   telegramBot      = new TelegramBot("sample token", {});
 ```
 
-###Create a bot with any kind of logic
+### Create a bot with any kind of logic
 ```js
 class TestBot {
   constructor(bot) {
@@ -73,7 +73,7 @@ class TestBot {
   }
 }
 ```
-###Write tests
+### Write tests
 (note that telegramBot is an instance of node-telegram-bot-api):
 ```js
 describe('Telegram Test', ()=> {
