@@ -78,10 +78,9 @@ class TestBot {
 ```js
 describe('Telegram Test', ()=> {
   const myBot = new TestBot(telegramBot);
-  let testChat = 0;
+  let testChat = 1;
   it('should be able to talk with sample bot', () => {
     const telegramTest = new TelegramTest(telegramBot);
-    testChat++;
     return telegramTest.sendUpdate(testChat, '/ping')
       .then((data)=> {
         if (data.text === 'pong') {
