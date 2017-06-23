@@ -56,6 +56,10 @@ class TelegramTest {
     };
   }
 
+  static  isPositiveInteger(data) {
+    return (Math.floor(data) === data) && (data > 0);
+  }
+
   /**
    *
    * @param chatId
@@ -65,7 +69,10 @@ class TelegramTest {
   sendUpdate(chatId, action) {
     const bot  = this.bot,
           self = this;
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
+      if (chatId !== undefined && !TelegramTest.isPositiveInteger(chatId)) {
+        reject(new Error('chatId should be a positive integer!'));
+      }
       bot.on('testMessage', function handler(msgChatId, text, form) {
         bot.removeListener('testMessage', handler);
         if (chatId === msgChatId) {
