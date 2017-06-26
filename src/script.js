@@ -1,5 +1,4 @@
-const Promise      = require('bluebird'),
-      objectAssign = require('object-assign');
+const Promise = require('bluebird');
 /**
  *
  * @param {object}[bot]
@@ -30,7 +29,7 @@ class TelegramTest {
  * first_name: string, username: string, type: string}, date: number, text: string}}}
    */
   makeMessage(messageText, messageOptions = {}) {
-    const options = objectAssign({}, messageOptions);
+    const options = Object.assign({}, messageOptions);
     options.userId = options.userId || 1;
     options.chatId = options.chatId || 1;
     options.firstName = options.firstName || 'TestName';
@@ -78,7 +77,8 @@ class TelegramTest {
         if (chatId === msgChatId) {
           if (form.reply_markup) {
             resolve({text, keyboard: JSON.parse(form.reply_markup).keyboard});
-          } else resolve(self.sendUpdate(chatId));// wait until some available actions appear
+          } else resolve({text, form});
+          // resolve (self.sendUpdate(chatId));// wait until some available actions appear
         }
       });
       if (action !== undefined) {
