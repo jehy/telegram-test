@@ -87,5 +87,21 @@ class TelegramTest {
       }
     });
   }
+
+  /**
+   * @return {Promise} Promise that resolves with the next incoming message
+   *   for the given `chatId`
+   */
+  waitForNextMessage(chatId) {
+    return new Promise((resolve) => {
+      const handler = (msgChatId, text) => {
+        if (chatId === msgChatId) {
+          this.bot.removeListener('testMessage', handler);
+          resolve({ text });
+        }
+      };
+      this.bot.on('testMessage', handler);
+    });
+  }
 }
 module.exports = TelegramTest;
