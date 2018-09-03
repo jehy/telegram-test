@@ -1,10 +1,10 @@
 
-/* eslint-disable import/no-extraneous-dependencies*/
+/* eslint-disable import/no-extraneous-dependencies */
 
 const
-  TelegramTest = require('../../index.js'),
   Promise      = require('bluebird'),
   TelegramBot  = require('node-telegram-bot-api'),
+  TelegramTest = require('../../index.js'),
   telegramBot  = new TelegramBot('sample token', {});
 
 

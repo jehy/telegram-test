@@ -3,7 +3,7 @@
  * Otherwise, we use the ES6 code.
  */
 
-/* eslint-disable global-require*/
+/* eslint-disable global-require */
 
 const majorVersion = parseInt(process.versions.node.split('.')[0], 10);
 if (majorVersion <= 5) {
