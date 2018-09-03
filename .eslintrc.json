@@ -11,6 +11,7 @@
   ],
   "rules": {
     "one-var": "off",
+    "prefer-destructuring": "warn",
     "indent": "off",
     "padded-blocks": "off",
     "no-plusplus": "off",
