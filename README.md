@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/jehy/telegram-test/badge.svg?branch=master)](https://coveralls.io/github/jehy/telegram-test?branch=master)
 [![dependencies Status](https://david-dm.org/jehy/telegram-test/status.svg)](https://david-dm.org/jehy/telegram-test)
 [![devDependencies Status](https://david-dm.org/jehy/telegram-test/dev-status.svg)](https://david-dm.org/jehy/telegram-test?type=dev)
-
+[![Known Vulnerabilities](https://snyk.io/test/github/jehy/telegram-test/badge.svg)](https://snyk.io/test/github/jehy/telegram-test)
 Simple module for testing telegram bots, created with `node-telegram-bot-api`
 which lets you test bot's logic without using telegram API.
 
