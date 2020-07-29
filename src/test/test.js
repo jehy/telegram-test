@@ -1,4 +1,3 @@
-
 /* eslint-disable import/no-extraneous-dependencies */
 
 const
@@ -6,7 +5,6 @@ const
   TelegramBot  = require('node-telegram-bot-api'),
   TelegramTest = require('../../index.js'),
   telegramBot  = new TelegramBot('sample token', {});
-
 
 class TestBot {
   constructor(bot) {
@@ -56,7 +54,6 @@ class TestBot {
   }
 }
 
-
 describe('Telegram Test', ()=> {
   const myBot = new TestBot(telegramBot);
   let testChat = 0;
@@ -67,19 +64,18 @@ describe('Telegram Test', ()=> {
     return Promise.resolve();
   });
 
-
   it('should be able to talk with sample bot', () => {
     const telegramTest = new TelegramTest(telegramBot);
     testChat++;
     return telegramTest.sendUpdate(testChat, '/ping')
-      .then((data)=> {
+      .then(data=> {
         if (data.text === 'pong') {
           return telegramTest.sendUpdate(testChat, '/start');
         }
         throw new Error(`Wrong answer for ping! (was  ${data.text})`);
       })
       .then(data=> telegramTest.sendUpdate(testChat, data.keyboard[0][0].text))
-      .then((data)=> {
+      .then(data=> {
         if (data.text === 'Hello, Masha!') {
           return true;
         }

@@ -10,6 +10,7 @@
     "promise"
   ],
   "rules": {
+    "arrow-parens": ["error", "as-needed"],
     "one-var": "off",
     "prefer-destructuring": "warn",
     "indent": "off",

@@ -29,7 +29,7 @@ class TelegramTest {
  * first_name: string, username: string, type: string}, date: number, text: string}}}
    */
   makeMessage(messageText, messageOptions = {}) {
-    const options = Object.assign({}, messageOptions);
+    const options = { ...messageOptions};
     options.userId = options.userId || 1;
     options.chatId = options.chatId || 1;
     options.firstName = options.firstName || 'TestName';
@@ -66,7 +66,7 @@ class TelegramTest {
    * @return {Promise}
    */
   sendUpdate(chatId, action) {
-    const bot  = this.bot,
+    const {bot} = this,
           self = this;
     return new Promise((resolve, reject) => {
       if (chatId !== undefined && !TelegramTest.isPositiveInteger(chatId)) {
@@ -93,7 +93,7 @@ class TelegramTest {
    *   for the given `chatId`
    */
   waitForNextMessage(chatId) {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const handler = (msgChatId, text) => {
         if (chatId === msgChatId) {
           this.bot.removeListener('testMessage', handler);
